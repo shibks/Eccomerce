@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-12T09:58:25 IST" name="Suite" finished-at="2025-11-12T09:59:06 IST" duration-ms="41770">
+    <groups>
+    </groups>
+    <test started-at="2025-11-12T09:58:25 IST" name="Regression" finished-at="2025-11-12T09:59:06 IST" duration-ms="41770">
+      <class name="Test.RegressionTest">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:Test.RegressionTest@157853da]" started-at="2025-11-12T09:58:25 IST" name="setup" finished-at="2025-11-12T09:58:32 IST" duration-ms="7274" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6e0e5dec]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="AllProductsAndProductDetailPage()[pri:1, instance:Test.RegressionTest@157853da]" started-at="2025-11-12T09:58:32 IST" name="AllProductsAndProductDetailPage" finished-at="2025-11-12T09:59:01 IST" duration-ms="29435" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AllProductsAndProductDetailPage -->
+        <test-method signature="contactUsForm()[pri:2, instance:Test.RegressionTest@157853da]" started-at="2025-11-12T09:59:01 IST" name="contactUsForm" finished-at="2025-11-12T09:59:06 IST" duration-ms="4695" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- contactUsForm -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Test.RegressionTest@157853da]" started-at="2025-11-12T09:59:06 IST" name="teardown" finished-at="2025-11-12T09:59:06 IST" duration-ms="183" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- Test.RegressionTest -->
+    </test> <!-- Regression -->
+  </suite> <!-- Suite -->
+</testng-results>

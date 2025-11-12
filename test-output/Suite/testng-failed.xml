@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Listener.ExtentReportListener"/>
+  </listeners>
+  <test thread-count="5" name="Regression(failed)">
+    <classes>
+      <class name="Test.RegressionTest">
+        <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
+          <include name="contactUsForm"/>
+          <include name="AllProductsAndProductDetailPage"/>
+        </methods>
+      </class> <!-- Test.RegressionTest -->
+    </classes>
+  </test> <!-- Regression(failed) -->
+</suite> <!-- Failed suite [Suite] -->
