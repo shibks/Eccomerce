@@ -1,6 +1,7 @@
 package Utilities;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,6 +22,10 @@ public class WaitUtility {
 		return wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
+	public static List<WebElement> waitForElementsToBeVisible(WebDriver driver,  List<WebElement> element) {
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(DEFAULT_WAIT));
+		return wait.until(ExpectedConditions.visibilityOfAllElements(element));
+	}
 	public static void waitForSeconds(WebDriver driver, int seconds) {
 	    try {
 	    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));

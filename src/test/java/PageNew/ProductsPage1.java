@@ -37,6 +37,20 @@ public class ProductsPage1 {
 	WebElement availability;
 	@FindBy(xpath="//a[normalize-space()='Home']")
 	WebElement home;
+	@FindBy(xpath="//input[@id='search_product']")
+	WebElement search;
+	@FindBy(css=".title.text-center")
+	WebElement searchProductHeading;
+	@FindBy(xpath="//a[contains(text(),'View Product')]")
+	List<WebElement> visibleProducts;
+	@FindBy(xpath="(//a[@class='btn btn-default add-to-cart'][normalize-space()='Add to cart'])[1]")
+	WebElement addToCart1;
+	@FindBy(xpath="(//a[@class='btn btn-default add-to-cart'][normalize-space()='Add to cart'])[3]")
+	WebElement addToCart2;
+	@FindBy(xpath="//a[normalize-space()='Cart']")
+	WebElement cart;
+	@FindBy(xpath="//button[@class='btn btn-success close-modal btn-block']")
+	WebElement continueShopping;
 	
 	public void allProductsVisible() {
 		Assert.assertTrue(WaitUtility.waitforElementVisible(driver, allProductsPage).isDisplayed(),"---No Not displayed--");
@@ -68,8 +82,34 @@ public class ProductsPage1 {
 		homePage1.isHomeVisible();
 	}
 	
+	public void productSearch() {
+		WaitUtility.waitforElementVisible(driver, search).sendKeys("shirt");
+	}
 	
+	public void searchProductIsVisible() {
+		Assert.assertTrue(WaitUtility.waitforElementVisible(driver, searchProductHeading).isDisplayed(),"----No Not Displayed");
+	}
 	
+	public void searchAllProductsVisible() {
+		Assert.assertTrue(visibleProducts.size()>0);
+	}
+	
+	public void addFirstProductToCart() {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",addToCart1);
+		addToCart1.click();
+	}
+	public void clickContinueShopping() {
+		WaitUtility.waitforElementClickable(driver, continueShopping).click();
+	}
+
+	public void addSecondProductToCart() {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",addToCart2);
+		addToCart2.click();
+		clickContinueShopping();
+	}
+	public void clickCart() {
+		WaitUtility.waitforElementClickable(driver, cart).click();
+	}
 	
 	
 	

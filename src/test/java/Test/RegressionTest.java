@@ -2,6 +2,7 @@ package Test;
 
 import org.testng.annotations.Test;
 
+import PageNew.CartPage;
 import PageNew.ContactUsPage1;
 import PageNew.HomePage1;
 import PageNew.LoginPage1;
@@ -10,7 +11,7 @@ import base.BaseTest;
 
 public class RegressionTest extends BaseTest {
 	
-	
+	@Test(priority = 1)
 	public void LoginWithCorrectUserAndEmail()
 	{
 		HomePage1 home=new HomePage1(driver);
@@ -20,10 +21,10 @@ public class RegressionTest extends BaseTest {
 		login.loginToAccVisible();
 		login.emailAndPassword();
 		login.loggedInAsUserName();
-		login.deleteAccount();
+		
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 2)
 	public void AllProductsAndProductDetailPage() {
 		HomePage1 home=new HomePage1(driver);
 		ProductsPage1 product=new ProductsPage1(driver);
@@ -35,7 +36,7 @@ public class RegressionTest extends BaseTest {
 		product.productDetails();
 		product.goHome();
 	}
-	@Test(priority = 2)
+	@Test(priority = 3)
 	public void contactUsForm() {
 		HomePage1 home=new HomePage1(driver);
 		ContactUsPage1 contact=new ContactUsPage1(driver);
@@ -49,7 +50,37 @@ public class RegressionTest extends BaseTest {
 		home.isHomeVisible();
 	}
 	
+	@Test(priority = 4)
+	public void searchProduct() {
+		HomePage1 home=new HomePage1(driver);
+		ProductsPage1 page=new ProductsPage1(driver);
+		home.isHomeVisible();
+		home.clickProductsPage();
+		page.allProductsVisible();
+		page.productSearch();
+		page.searchProductIsVisible();
+		page.searchAllProductsVisible();
+		page.goHome();
+	}
 	
+	@Test(priority = 5)
+	public void addProductsToCart() {
+		HomePage1 home=new HomePage1(driver);
+		ProductsPage1 page=new ProductsPage1(driver);
+		CartPage cart=new CartPage(driver);
+		home.isHomeVisible();
+		home.clickProductsPage();
+		page.allProductsVisible();
+		page.addFirstProductToCart();
+		page.clickContinueShopping();
+		page.addSecondProductToCart();
+		page.clickCart();
+		cart.verifyProductNames();
+		cart.verifyTotalPrice();
+		
+		
+		
+	}
 	
 	
 	

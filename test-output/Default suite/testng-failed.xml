@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="teardown"/>
-          <include name="contactUsForm"/>
+          <include name="addProductsToCart"/>
         </methods>
       </class> <!-- Test.RegressionTest -->
     </classes>
