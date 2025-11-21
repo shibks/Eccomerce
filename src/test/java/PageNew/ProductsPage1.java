@@ -51,6 +51,19 @@ public class ProductsPage1 {
 	WebElement cart;
 	@FindBy(xpath="//button[@class='btn btn-success close-modal btn-block']")
 	WebElement continueShopping;
+	@FindBy(xpath="//a[normalize-space()='Women']")
+	WebElement womenCategory;
+	@FindBy(xpath="//div[@id='Women']//a[contains(text(),'Dress')]")
+	WebElement womenDress;
+	@FindBy(css=".title.text-center")
+	WebElement womenheading;
+	@FindBy(xpath="//a[normalize-space()='Men']")
+	WebElement mensCategory;
+	@FindBy(xpath="//a[normalize-space()='Tshirts']")
+	WebElement mensDress;
+	@FindBy(css=".title.text-center")
+	WebElement mensHeading;
+	
 	
 	public void allProductsVisible() {
 		Assert.assertTrue(WaitUtility.waitforElementVisible(driver, allProductsPage).isDisplayed(),"---No Not displayed--");
@@ -67,6 +80,12 @@ public class ProductsPage1 {
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("arguments[0].scrollIntoView(true);",firstProduct);
 		WaitUtility.waitforElementClickable(driver, firstProduct).click();
+	}
+	
+	public void clickWomenCategory() {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",womenCategory);
+		WaitUtility.waitforElementClickable(driver, womenCategory).click();
+		WaitUtility.waitforElementClickable(driver, womenDress).click();
 	}
 	
 	public void productDetails() {
@@ -110,11 +129,21 @@ public class ProductsPage1 {
 	public void clickCart() {
 		WaitUtility.waitforElementClickable(driver, cart).click();
 	}
+	public void checkWomenCategoryHeading() {
+		String k=WaitUtility.waitforElementVisible(driver, womenheading).getText();
+		Assert.assertEquals(k,"WOMEN - DRESS PRODUCTS", "------Womens Heading Mismatch------");
+	}
 	
+	public void clickMenCategory() {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",mensCategory);
+		WaitUtility.waitforElementClickable(driver, mensCategory).click();
+		WaitUtility.waitforElementClickable(driver, mensDress).click();
+	}
 	
-	
-	
-	
+	public void checkMensCategoryHeading() {
+		String k=WaitUtility.waitforElementVisible(driver, mensHeading).getText();
+		Assert.assertEquals(k,"MEN - TSHIRTS PRODUCTS", "------Mens Heading Mismatch------");
+	}
 	
 	
 	

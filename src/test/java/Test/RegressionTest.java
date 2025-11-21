@@ -36,6 +36,7 @@ public class RegressionTest extends BaseTest {
 		product.productDetails();
 		product.goHome();
 	}
+	
 	@Test(priority = 3)
 	public void contactUsForm() {
 		HomePage1 home=new HomePage1(driver);
@@ -50,7 +51,7 @@ public class RegressionTest extends BaseTest {
 		home.isHomeVisible();
 	}
 	
-	@Test(priority = 4)
+	@Test(priority=4)
 	public void searchProduct() {
 		HomePage1 home=new HomePage1(driver);
 		ProductsPage1 page=new ProductsPage1(driver);
@@ -77,12 +78,21 @@ public class RegressionTest extends BaseTest {
 		page.clickCart();
 		cart.verifyProductNames();
 		cart.verifyTotalPrice();
-		
-		
+		page.goHome();
 		
 	}
 	
-	
+	@Test(priority = 6)
+	public void categoryCheck() {
+		HomePage1 home=new HomePage1(driver);
+		ProductsPage1 product=new ProductsPage1(driver);
+		home.isHomeVisible();
+		product.clickWomenCategory();
+		product.checkWomenCategoryHeading();
+		product.clickMenCategory();
+		product.checkMensCategoryHeading();
+		
+	}
 	
 	
 	

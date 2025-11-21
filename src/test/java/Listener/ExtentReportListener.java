@@ -47,7 +47,7 @@ public class ExtentReportListener implements ITestListener {
             extent = new ExtentReports();
             extent.attachReporter(spark);
 
-            // ============ REAL INDUSTRY SYSTEM INFO ============
+            
             extent.setSystemInfo("Executed By", "Shibin");
             extent.setSystemInfo("Environment", "QA");
             extent.setSystemInfo("Build Version", "v1.4.3");
@@ -62,9 +62,7 @@ public class ExtentReportListener implements ITestListener {
         return extent;
     }
 
-    // =================================================================
-    //            SCREENSHOT CAPTURE (ENHANCED)
-    // =================================================================
+    
     private String captureScreenshot(WebDriver driver, String testName) {
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String path = SCREENSHOT_FOLDER + testName + "_" + timestamp + ".png";
@@ -79,9 +77,7 @@ public class ExtentReportListener implements ITestListener {
         return path;
     }
 
-    // =================================================================
-    //                       TEST START
-    // =================================================================
+    
     @Override
     public void onTestStart(ITestResult result) {
 
@@ -102,9 +98,6 @@ public class ExtentReportListener implements ITestListener {
         LogUtil.info("---------Test Started → " + result.getMethod().getMethodName()+"------------");
     }
 
-    // =================================================================
-    //                       TEST SUCCESS
-    // =================================================================
     @Override
     public void onTestSuccess(ITestResult result) {
         ExtentTest test = testThread.get();
@@ -113,9 +106,6 @@ public class ExtentReportListener implements ITestListener {
         LogUtil.info("---------Test Passed Success → " + result.getMethod().getMethodName()+"------------");
     }
 
-    // =================================================================
-    //                       TEST FAILURE
-    // =================================================================
     @Override
     public void onTestFailure(ITestResult result) {
 
@@ -142,9 +132,6 @@ public class ExtentReportListener implements ITestListener {
     }
     
 
-    // =================================================================
-    //                       TEST SKIPPED
-    // =================================================================
     @Override
     public void onTestSkipped(ITestResult result) {
         ExtentTest test = testThread.get();
@@ -155,17 +142,12 @@ public class ExtentReportListener implements ITestListener {
         LogUtil.warn("--------Test Skipped "+result.getMethod().getMethodName()+"---------");
     }
 
-    // =================================================================
-    //                   SUITE START
-    // =================================================================
+    
     @Override
     public void onStart(ITestContext context) {
         getExtentInstance();
     }
 
-    // =================================================================
-    //                   SUITE FINISH
-    // =================================================================
     @Override
     public void onFinish(ITestContext context) {
         getExtentInstance().flush();
