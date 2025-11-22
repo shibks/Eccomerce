@@ -46,8 +46,8 @@ public class CartPage {
 			double pricee = Double.parseDouble(cleanPrice);
 			pricess.add(pricee);
 		}
-		Assert.assertEquals(pricess.get(0), 500,"--Total Price Mismatch--");
-		Assert.assertEquals(pricess.get(1), 400,"--Total Price Mismatch--");
+		Assert.assertEquals(pricess.get(0), 500,"------Total Price Mismatch-------------");
+		Assert.assertEquals(pricess.get(1), 400,"-------Total Price Mismatch----------------");
 	}
 	
 	
