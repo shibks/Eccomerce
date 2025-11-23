@@ -11,6 +11,11 @@
           <include name="setup"/>
           <include name="teardown"/>
           <include name="categoryCheck"/>
+          <include name="LoginWithCorrectUserAndEmail"/>
+          <include name="searchProduct"/>
+          <include name="addProductsToCart"/>
+          <include name="contactUsForm"/>
+          <include name="AllProductsAndProductDetailPage"/>
         </methods>
       </class> <!-- Test.RegressionTest -->
     </classes>

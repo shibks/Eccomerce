@@ -2,47 +2,47 @@
 <testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-21T09:45:26 IST" name="Suite" finished-at="2025-11-21T09:46:33 IST" duration-ms="66433">
+  <suite started-at="2025-11-23T09:51:26 IST" name="Suite" finished-at="2025-11-23T09:52:21 IST" duration-ms="55176">
     <groups>
     </groups>
-    <test started-at="2025-11-21T09:45:26 IST" name="Regression" finished-at="2025-11-21T09:46:33 IST" duration-ms="66433">
+    <test started-at="2025-11-23T09:51:26 IST" name="Regression" finished-at="2025-11-23T09:52:21 IST" duration-ms="55176">
       <class name="Test.RegressionTest">
-        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:Test.RegressionTest@5fbdfdcf]" started-at="2025-11-21T09:45:27 IST" name="setup" finished-at="2025-11-21T09:45:34 IST" duration-ms="7756" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T09:51:26 IST" name="setup" finished-at="2025-11-23T09:51:30 IST" duration-ms="4241" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@53016b11]]>
+                <![CDATA[org.testng.TestRunner@9687f55]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="LoginWithCorrectUserAndEmail()[pri:1, instance:Test.RegressionTest@5fbdfdcf]" started-at="2025-11-21T09:45:34 IST" name="LoginWithCorrectUserAndEmail" finished-at="2025-11-21T09:45:42 IST" duration-ms="7262" status="PASS">
+        <test-method signature="LoginWithCorrectUserAndEmail()[pri:1, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T09:51:30 IST" name="LoginWithCorrectUserAndEmail" finished-at="2025-11-23T09:51:35 IST" duration-ms="5008" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginWithCorrectUserAndEmail -->
-        <test-method signature="AllProductsAndProductDetailPage()[pri:2, instance:Test.RegressionTest@5fbdfdcf]" started-at="2025-11-21T09:45:42 IST" name="AllProductsAndProductDetailPage" finished-at="2025-11-21T09:46:08 IST" duration-ms="25867" status="PASS">
+        <test-method signature="AllProductsAndProductDetailPage()[pri:2, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T09:51:35 IST" name="AllProductsAndProductDetailPage" finished-at="2025-11-23T09:51:43 IST" duration-ms="7642" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AllProductsAndProductDetailPage -->
-        <test-method signature="contactUsForm()[pri:3, instance:Test.RegressionTest@5fbdfdcf]" started-at="2025-11-21T09:46:08 IST" name="contactUsForm" finished-at="2025-11-21T09:46:13 IST" duration-ms="5624" status="PASS">
+        <test-method signature="contactUsForm()[pri:3, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T09:51:43 IST" name="contactUsForm" finished-at="2025-11-23T09:51:49 IST" duration-ms="5700" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- contactUsForm -->
-        <test-method signature="searchProduct()[pri:4, instance:Test.RegressionTest@5fbdfdcf]" started-at="2025-11-21T09:46:13 IST" name="searchProduct" finished-at="2025-11-21T09:46:18 IST" duration-ms="5091" status="PASS">
+        <test-method signature="searchProduct()[pri:4, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T09:51:49 IST" name="searchProduct" finished-at="2025-11-23T09:52:00 IST" duration-ms="10954" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchProduct -->
-        <test-method signature="addProductsToCart()[pri:5, instance:Test.RegressionTest@5fbdfdcf]" started-at="2025-11-21T09:46:18 IST" name="addProductsToCart" finished-at="2025-11-21T09:46:28 IST" duration-ms="9197" status="PASS">
+        <test-method signature="addProductsToCart()[pri:5, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T09:52:00 IST" name="addProductsToCart" finished-at="2025-11-23T09:52:15 IST" duration-ms="14997" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addProductsToCart -->
-        <test-method signature="categoryCheck()[pri:6, instance:Test.RegressionTest@5fbdfdcf]" started-at="2025-11-21T09:46:28 IST" name="categoryCheck" finished-at="2025-11-21T09:46:32 IST" duration-ms="4659" status="PASS">
+        <test-method signature="categoryCheck()[pri:6, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T09:52:15 IST" name="categoryCheck" finished-at="2025-11-23T09:52:21 IST" duration-ms="6116" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- categoryCheck -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Test.RegressionTest@5fbdfdcf]" started-at="2025-11-21T09:46:32 IST" name="teardown" finished-at="2025-11-21T09:46:33 IST" duration-ms="426" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T09:52:21 IST" name="teardown" finished-at="2025-11-23T09:52:21 IST" duration-ms="309" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

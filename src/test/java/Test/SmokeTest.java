@@ -1,6 +1,7 @@
 package Test;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,7 +11,7 @@ import Page.LoginPage;
 import Page.RegisterPage;
 import Utilities.WaitUtility;
 import base.BaseTest;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class SmokeTest extends BaseTest{
 	

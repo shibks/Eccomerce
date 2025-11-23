@@ -20,6 +20,7 @@ public WebDriver driver;
 		driver.manage().window().maximize();
 		 context.setAttribute("WebDriver", driver);
 System.out.println("------Driver Initialized---------");
+
 driver.get(ConfigReader.getProperty("url"));
 	}
 	
