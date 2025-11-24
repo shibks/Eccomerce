@@ -1,14 +1,14 @@
 pipeline {
-    agent any
+    agent { label 'dummy-node' }
 
     stages {
         stage('Build') {
             steps {
-                bat 'mvn clean install'
+                bat 'mvn clean install -DskipTests'
             }
         }
 
-        stage('Tests') {
+        stage('Run Tests') {
             steps {
                 bat 'mvn test'
             }
