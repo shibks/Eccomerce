@@ -2,6 +2,13 @@ pipeline {
 
     agent { label 'dummy-node' }
 
+    properties([
+        parameters([
+            choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], defaultValue: 'chrome', description: 'Choose Browser to run tests'),
+            choice(name: 'ENV', choices: ['QA', 'DEV'], defaultValue: 'QA', description: 'Choose Environment')
+        ])
+    ])
+
     parameters {
         choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Choose Browser to run tests')
         choice(name: 'ENV', choices: ['QA', 'DEV'], description: 'Choose Environment')
