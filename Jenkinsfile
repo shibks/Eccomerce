@@ -18,7 +18,15 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat "mvn test -Dbrowser=${params.BROWSER} -Denv=${params.ENV}"
+				withCredentials([usernamePassword(
+                    credentialsId: 'login-creds',      
+                    usernameVariable: 'USER',
+                    passwordVariable: 'PASS'
+                )]) {
+
+               bat "mvn test -Dbrowser=${params.BROWSER} -Denv=${params.ENV} -Dusername=%USER% -Dpassword=%PASS%"
+               }
+
             }
         }
 

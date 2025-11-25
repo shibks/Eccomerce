@@ -11,6 +11,7 @@ import Utilities.WaitUtility;
 public class LoginPage1 {
 
 	WebDriver driver;
+	
 
 	public LoginPage1(WebDriver driver) {
 		this.driver = driver;
@@ -37,8 +38,10 @@ public class LoginPage1 {
 	}
 	
 	public void emailAndPassword() {
-		WaitUtility.waitforElementVisible(driver, email).sendKeys("shibink3517@gmail.com");
-		WaitUtility.waitforElementVisible(driver, password).sendKeys("123456");
+		String user=System.getProperty("username");
+		String pass=System.getProperty("password");
+		WaitUtility.waitforElementVisible(driver, email).sendKeys(user);
+		WaitUtility.waitforElementVisible(driver, password).sendKeys(pass);
 		WaitUtility.waitforElementClickable(driver, login).click();
 	}
 	
