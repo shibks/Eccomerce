@@ -4,8 +4,8 @@ pipeline {
 
    
     parameters {
-        choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], defaultValue: 'chrome', description: 'Choose Browser to run tests')
-        choice(name: 'ENV', choices: ['QA', 'DEV'], defaultValue: 'QA', description: 'Choose Environment')
+        choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Choose Browser to run tests')
+        choice(name: 'ENV', choices: ['QA', 'DEV'], description: 'Choose Environment')
     }
 
     stages {
