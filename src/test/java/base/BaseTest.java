@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import Utilities.ConfigReader;
+import Utilities.EnvConfig;
 
 
 public class BaseTest {
@@ -21,7 +22,7 @@ public WebDriver driver;
 		 context.setAttribute("WebDriver", driver);
 System.out.println("------Driver Initialized---------");
 
-driver.get(ConfigReader.getProperty("url"));
+driver.get(EnvConfig.getURL());
 	}
 	
 	@AfterClass

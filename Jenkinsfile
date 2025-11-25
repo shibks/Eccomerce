@@ -1,17 +1,23 @@
 pipeline {
+
     agent { label 'dummy-node' }
+
+    parameters {
+        choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Choose Browser to run tests')
+        choice(name: 'ENV', choices: ['QA', 'DEV'], description: 'Choose Environment')
+    }
 
     stages {
 
         stage('Build') {
             steps {
-                bat 'mvn clean install -DskipTests'
+                bat "mvn clean install -DskipTests"
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'mvn test'
+                bat "mvn test -Dbrowser=${params.BROWSER} -Denv=${params.ENV}"
             }
         }
 

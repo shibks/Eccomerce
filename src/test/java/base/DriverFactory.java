@@ -18,16 +18,12 @@ public class DriverFactory {
 		System.out.println(">>>------------ Received browser from Jenkins: " + System.getProperty("browser"));
 		System.out.println(">>>-------------- Browser after fallback logic: " + browser);
 
-
 		if (browser == null || browser.isEmpty()) {
 		  
 		    browser = ConfigReader.getProperty("browser");
 		}
 
 		browser = browser.toLowerCase();
-	
-
-		
 		switch(browser) {
 		case "chrome":
 			
@@ -50,7 +46,6 @@ public class DriverFactory {
 		}
 		
 	return driver.get();
-		
 		
 	}
 	
