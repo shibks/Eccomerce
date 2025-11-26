@@ -5,7 +5,7 @@ pipeline {
     parameters {
         choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Choose Browser for UI tests')
         choice(name: 'ENV', choices: ['QA', 'DEV'], description: 'Choose Environment')
-        choice(name: 'SUITE', choices: ['ui.xml', 'api.xml', 'both'], description: 'Select Suite to Run')
+        choice(name: 'SUITE', choices: ['testng.xml', 'APItest.xml', 'both'], description: 'Select Suite to Run')
     }
 
     stages {
