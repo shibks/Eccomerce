@@ -35,11 +35,11 @@ pipeline {
 
                         if (params.SUITE == 'testng.xml') {
                             echo "Running ONLY UI Test Suite..."
-                            runSuite("ui.xml", true)
+                            runSuite("testng.xml", true)
                         }
                         else if (params.SUITE == 'APItest.xml') {
                             echo "Running ONLY API Test Suite..."
-                            runSuite("api.xml", false)
+                            runSuite("APItest.xml", false)
                         }
                         else if (params.SUITE == 'both') {
                             echo "Running BOTH UI and API Test Suites..."
