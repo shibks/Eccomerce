@@ -3,8 +3,9 @@ pipeline {
     agent { label 'dummy-node' }
 
     parameters {
-        choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Choose Browser to run tests')
+        choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Choose Browser for UI tests')
         choice(name: 'ENV', choices: ['QA', 'DEV'], description: 'Choose Environment')
+        choice(name: 'SUITE', choices: ['ui.xml', 'api.xml', 'both'], description: 'Select Suite to Run')
     }
 
     stages {
@@ -17,7 +18,7 @@ pipeline {
             }
             post {
                 failure {
-                    echo "___________Build failed - Check COMPILATION ERROR_______"
+                    echo "___________Build failed - Check Compilation Error_______"
                 }
             }
         }
@@ -30,31 +31,35 @@ pipeline {
                     passwordVariable: 'PASS'
                 )]) {
 
-                    catchError(buildResult:'SUCCESS', stageResult:'FAILURE') {
-                        retry(2) {
-                            bat """
-                                mvn test ^
-                                -Dbrowser=${params.BROWSER} ^
-                                -Denv=${params.ENV} ^
-                                -Dusername=%USER% ^
-                                -Dpassword=%PASS%
-                            """
-                        }
-                    }
+                    script {
 
+                        if (params.SUITE == 'ui.xml') {
+                            echo "Running ONLY UI Test Suite..."
+                            runSuite("ui.xml", true)
+                        }
+                        else if (params.SUITE == 'api.xml') {
+                            echo "Running ONLY API Test Suite..."
+                            runSuite("api.xml", false)
+                        }
+                        else if (params.SUITE == 'both') {
+                            echo "Running BOTH UI and API Test Suites..."
+                            runSuite("ui.xml", true)
+                            runSuite("api.xml", false)
+                        }
+
+                    }
                 }
             }
 
             post {
                 failure {
                     echo "Tests failed! Collecting screenshots..."
-
                     archiveArtifacts artifacts: 'screenshots/*.png', fingerprint: true
                 }
             }
         }
 
-        stage('Publish Extent Report') {
+        stage('Publish Report') {
             steps {
                 publishHTML(target: [
                     reportDir: 'Reports',
@@ -68,6 +73,33 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'Reports/*.html', fingerprint: true
+        }
+    }
+}
+
+def runSuite(String suiteName, boolean isUI) {
+
+    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+        retry(2) {
+
+            if (isUI) {
+          
+                bat """
+                    mvn test ^
+                        -DsuiteXmlFile=${suiteName} ^
+                        -Dbrowser=${params.BROWSER} ^
+                        -Denv=${params.ENV} ^
+                        -Dusername=%USER% ^
+                        -Dpassword=%PASS%
+                """
+            } else {
+                
+                bat """
+                    mvn test ^
+                        -DsuiteXmlFile=${suiteName} ^
+                        
+                """
+            }
         }
     }
 }

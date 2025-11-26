@@ -1,166 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="4" failed="2" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-23T10:27:08 IST" name="Suite" finished-at="2025-11-23T10:28:37 IST" duration-ms="89023">
+  <suite started-at="2025-11-26T12:19:01 IST" name="Default suite" finished-at="2025-11-26T12:19:04 IST" duration-ms="3257">
     <groups>
     </groups>
-    <test started-at="2025-11-23T10:27:08 IST" name="Regression" finished-at="2025-11-23T10:28:37 IST" duration-ms="89023">
-      <class name="Test.RegressionTest">
-        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T10:27:09 IST" name="setup" finished-at="2025-11-23T10:27:13 IST" duration-ms="4828" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@4a9860]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2025-11-26T12:19:01 IST" name="Default test" finished-at="2025-11-26T12:19:04 IST" duration-ms="3257">
+      <class name="Test.ApiTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Test.ApiTests@3fb1549b]" started-at="2025-11-26T12:19:01 IST" name="setUp" finished-at="2025-11-26T12:19:01 IST" duration-ms="257" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="LoginWithCorrectUserAndEmail()[pri:1, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T10:27:13 IST" name="LoginWithCorrectUserAndEmail" finished-at="2025-11-23T10:27:18 IST" duration-ms="4847" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyPostMethodNotAllowed()[pri:1, instance:Test.ApiTests@3fb1549b]" started-at="2025-11-26T12:19:01 IST" name="verifyPostMethodNotAllowed" finished-at="2025-11-26T12:19:03 IST" duration-ms="2493" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginWithCorrectUserAndEmail -->
-        <test-method signature="AllProductsAndProductDetailPage()[pri:2, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T10:27:18 IST" name="AllProductsAndProductDetailPage" finished-at="2025-11-23T10:27:49 IST" duration-ms="30857" status="PASS">
+        </test-method> <!-- verifyPostMethodNotAllowed -->
+        <test-method signature="brandListApi()[pri:2, instance:Test.ApiTests@3fb1549b]" started-at="2025-11-26T12:19:03 IST" name="brandListApi" finished-at="2025-11-26T12:19:04 IST" duration-ms="479" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AllProductsAndProductDetailPage -->
-        <test-method signature="contactUsForm()[pri:3, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T10:27:49 IST" name="contactUsForm" finished-at="2025-11-23T10:27:58 IST" duration-ms="8937" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- contactUsForm -->
-        <test-method signature="searchProduct()[pri:4, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T10:27:58 IST" name="searchProduct" finished-at="2025-11-23T10:28:08 IST" duration-ms="9906" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchProduct -->
-        <test-method signature="addProductsToCart()[pri:5, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T10:28:08 IST" name="addProductsToCart" finished-at="2025-11-23T10:28:16 IST" duration-ms="8293" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[------Total Price Mismatch------------- expected [500.0] but found [1000.0]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: ------Total Price Mismatch------------- expected [500.0] but found [1000.0]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:765)
-at org.testng.Assert.assertEquals(Assert.java:741)
-at PageNew.CartPage.verifyTotalPrice(CartPage.java:49)
-at Test.RegressionTest.addProductsToCart(RegressionTest.java:80)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addProductsToCart -->
-        <test-method signature="categoryCheck()[pri:6, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T10:28:17 IST" name="categoryCheck" finished-at="2025-11-23T10:28:37 IST" duration-ms="20222" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@id='slider-carousel']//div[@class='carousel-inner']' (tried for 20 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@id='slider-carousel']//div[@class='carousel-inner']' (tried for 20 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at Utilities.WaitUtility.waitforElementVisible(WaitUtility.java:17)
-at PageNew.HomePage1.isHomeVisible(HomePage1.java:31)
-at Test.RegressionTest.categoryCheck(RegressionTest.java:89)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='slider-carousel']//div[@class='carousel-inner']"}
-  (Session info: chrome=142.0.7444.176)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.28.1', revision: '73f5ad48a2'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c8645e20dd51456357b015ec92f4da50, findElement {value=//div[@id='slider-carousel']//div[@class='carousel-inner'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SHIBIN\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59458}, goog:processID: 30136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59458/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c8645e20dd51456357b015ec92f4da50
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 29 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- categoryCheck -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Test.RegressionTest@14555e0a]" started-at="2025-11-23T10:28:37 IST" name="teardown" finished-at="2025-11-23T10:28:37 IST" duration-ms="429" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- Test.RegressionTest -->
-    </test> <!-- Regression -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- brandListApi -->
+      </class> <!-- Test.ApiTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
