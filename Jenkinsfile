@@ -2,7 +2,6 @@ pipeline {
 
     agent { label 'dummy-node' }
 
-   
     parameters {
         choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Choose Browser to run tests')
         choice(name: 'ENV', choices: ['QA', 'DEV'], description: 'Choose Environment')
@@ -12,21 +11,46 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat "mvn clean install -DskipTests"
+                catchError(buildResult:'FAILURE', stageResult:'FAILURE') {
+                    bat "mvn clean install -DskipTests"
+                }
+            }
+            post {
+                failure {
+                    echo "___________Build failed - Check COMPILATION ERROR_______"
+                }
             }
         }
 
         stage('Run Tests') {
             steps {
-				withCredentials([usernamePassword(
-                    credentialsId: 'login-creds',      
+                withCredentials([usernamePassword(
+                    credentialsId: 'login-creds',
                     usernameVariable: 'USER',
                     passwordVariable: 'PASS'
                 )]) {
 
-               bat "mvn test -Dbrowser=${params.BROWSER} -Denv=${params.ENV} -Dusername=%USER% -Dpassword=%PASS%"
-               }
+                    catchError(buildResult:'SUCCESS', stageResult:'FAILURE') {
+                        retry(2) {
+                            bat """
+                                mvn test ^
+                                -Dbrowser=${params.BROWSER} ^
+                                -Denv=${params.ENV} ^
+                                -Dusername=%USER% ^
+                                -Dpassword=%PASS%
+                            """
+                        }
+                    }
 
+                }
+            }
+
+            post {
+                failure {
+                    echo "Tests failed! Collecting screenshots..."
+
+                    archiveArtifacts artifacts: 'screenshots/*.png', fingerprint: true
+                }
             }
         }
 
