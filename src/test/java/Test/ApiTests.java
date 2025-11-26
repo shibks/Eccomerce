@@ -1,6 +1,7 @@
 package Test;
 
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import AssertionHelper.Assertionhelper;
@@ -17,6 +18,7 @@ public class ApiTests extends BaseAPITest {
 	@Test(priority = 1)
 	public void verifyPostMethodNotAllowed() {
 		Response res=api.post("/productsList");
+		Reporter.getCurrentTestResult().getTestContext().setAttribute("API_RESPONSE", res);
 		res.then().log().all();
 		Assert.assertEquals(res.jsonPath().getInt("responseCode"), 405);
 		Assertionhelper.verifyMessage(res, "This request method is not supported.");
@@ -25,6 +27,7 @@ public class ApiTests extends BaseAPITest {
 	@Test(priority = 2)
 	public void brandListApi() { 
 		Response res=api.get("/brandsList");
+		Reporter.getCurrentTestResult().getTestContext().setAttribute("API_RESPONSE", res);
 		res.prettyPrint();
 		Assert.assertEquals(res.statusCode(), 200);
 		int size=res.jsonPath().getList("brands").size();

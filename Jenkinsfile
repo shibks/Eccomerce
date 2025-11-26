@@ -37,16 +37,17 @@ pipeline {
                             echo "Running ONLY UI Test Suite..."
                             runSuite("testng.xml", true)
                         }
+
                         else if (params.SUITE == 'APItest.xml') {
                             echo "Running ONLY API Test Suite..."
                             runSuite("APItest.xml", false)
                         }
+
                         else if (params.SUITE == 'both') {
                             echo "Running BOTH UI and API Test Suites..."
                             runSuite("testng.xml", true)
                             runSuite("APItest.xml", false)
                         }
-
                     }
                 }
             }
@@ -61,18 +62,48 @@ pipeline {
 
         stage('Publish Report') {
             steps {
-                publishHTML(target: [
-                    reportDir: 'Reports',
-                    reportFiles: '*.html',
-                    reportName: 'Extent Report'
-                ])
+
+                script {
+
+                    // ------------------ UI REPORT -------------------
+                    if (params.SUITE == 'testng.xml' || params.SUITE == 'both') {
+                        echo "Publishing UI Reports..."
+                        publishHTML(target: [
+                            reportDir: 'Reports',
+                            reportFiles: '*.html',
+                            reportName: 'UI Extent Report'
+                        ])
+                    }
+
+                    // ------------------ API REPORT -------------------
+                    if (params.SUITE == 'APItest.xml' || params.SUITE == 'both') {
+                        echo "Publishing API Reports..."
+                        publishHTML(target: [
+                            reportDir: 'ApiReports',
+                            reportFiles: '*.html',
+                            reportName: 'API Extent Report'
+                        ])
+                    }
+                }
             }
         }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: 'Reports/*.html', fingerprint: true
+
+            script {
+
+                // Archive UI reports only when UI suite ran
+                if (params.SUITE == 'testng.xml' || params.SUITE == 'both') {
+                    archiveArtifacts artifacts: 'Reports/*.html', fingerprint: true
+                }
+
+                // Archive API reports only when API suite ran
+                if (params.SUITE == 'APItest.xml' || params.SUITE == 'both') {
+                    archiveArtifacts artifacts: 'ApiReports/*.html', fingerprint: true
+                }
+            }
         }
     }
 }
@@ -83,7 +114,7 @@ def runSuite(String suiteName, boolean isUI) {
         retry(2) {
 
             if (isUI) {
-          
+
                 bat """
                     mvn test ^
                         -DsuiteXmlFile=${suiteName} ^
@@ -92,12 +123,12 @@ def runSuite(String suiteName, boolean isUI) {
                         -Dusername=%USER% ^
                         -Dpassword=%PASS%
                 """
+
             } else {
-                
+
                 bat """
                     mvn test ^
-                        -DsuiteXmlFile=${suiteName} ^
-                        
+                        -DsuiteXmlFile=${suiteName}
                 """
             }
         }
