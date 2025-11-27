@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-26T13:34:25 IST" name="Suite" finished-at="2025-11-26T13:34:28 IST" duration-ms="3228">
+  <suite started-at="2025-11-26T18:57:21 IST" name="Suite" finished-at="2025-11-26T18:57:28 IST" duration-ms="7097">
     <groups>
     </groups>
-    <test started-at="2025-11-26T13:34:25 IST" name="Test" finished-at="2025-11-26T13:34:28 IST" duration-ms="3228">
+    <test started-at="2025-11-26T18:57:21 IST" name="Test" finished-at="2025-11-26T18:57:28 IST" duration-ms="7097">
       <class name="Test.ApiTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Test.ApiTests@ea6147e]" started-at="2025-11-26T13:34:25 IST" name="setUp" finished-at="2025-11-26T13:34:25 IST" duration-ms="252" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Test.ApiTests@3b65e559]" started-at="2025-11-26T18:57:21 IST" name="setUp" finished-at="2025-11-26T18:57:21 IST" duration-ms="538" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyPostMethodNotAllowed()[pri:1, instance:Test.ApiTests@ea6147e]" started-at="2025-11-26T13:34:25 IST" name="verifyPostMethodNotAllowed" finished-at="2025-11-26T13:34:27 IST" duration-ms="2526" status="FAIL">
+        <test-method signature="verifyPostMethodNotAllowed()[pri:1, instance:Test.ApiTests@3b65e559]" started-at="2025-11-26T18:57:21 IST" name="verifyPostMethodNotAllowed" finished-at="2025-11-26T18:57:25 IST" duration-ms="3430" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPostMethodNotAllowed -->
+        <test-method signature="brandListApi()[pri:2, instance:Test.ApiTests@3b65e559]" started-at="2025-11-26T18:57:25 IST" name="brandListApi" finished-at="2025-11-26T18:57:26 IST" duration-ms="1350" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- brandListApi -->
+        <test-method signature="registerAccount()[pri:3, instance:Test.ApiTests@3b65e559]" started-at="2025-11-26T18:57:26 IST" name="registerAccount" finished-at="2025-11-26T18:57:27 IST" duration-ms="1250" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [406] but found [405]]]>
+              <![CDATA[expected [201] but found [200]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [406] but found [405]
+              <![CDATA[java.lang.AssertionError: expected [201] but found [200]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
 at org.testng.Assert.assertEqualsImpl(Assert.java:150)
@@ -25,7 +33,7 @@ at org.testng.Assert.assertEquals(Assert.java:132)
 at org.testng.Assert.assertEquals(Assert.java:1419)
 at org.testng.Assert.assertEquals(Assert.java:1383)
 at org.testng.Assert.assertEquals(Assert.java:1429)
-at Test.ApiTests.verifyPostMethodNotAllowed(ApiTests.java:23)
+at Test.ApiTests.registerAccount(ApiTests.java:53)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -57,11 +65,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyPostMethodNotAllowed -->
-        <test-method signature="brandListApi()[pri:2, instance:Test.ApiTests@ea6147e]" started-at="2025-11-26T13:34:27 IST" name="brandListApi" finished-at="2025-11-26T13:34:28 IST" duration-ms="414" status="PASS">
+        </test-method> <!-- registerAccount -->
+        <test-method signature="verifyLoginWithValidDetails()[pri:4, instance:Test.ApiTests@3b65e559]" started-at="2025-11-26T18:57:27 IST" name="verifyLoginWithValidDetails" finished-at="2025-11-26T18:57:28 IST" duration-ms="464" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- brandListApi -->
+        </test-method> <!-- verifyLoginWithValidDetails -->
       </class> <!-- Test.ApiTests -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

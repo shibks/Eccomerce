@@ -5,8 +5,8 @@
     <classes>
       <class name="Test.ApiTests">
         <methods>
-          <include name="brandListApi"/>
           <include name="setUp"/>
+          <include name="verifyLoginWithValidDetails"/>
         </methods>
       </class> <!-- Test.ApiTests -->
     </classes>

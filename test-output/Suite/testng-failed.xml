@@ -8,7 +8,7 @@
     <classes>
       <class name="Test.ApiTests">
         <methods>
-          <include name="verifyPostMethodNotAllowed"/>
+          <include name="registerAccount"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- Test.ApiTests -->

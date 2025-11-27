@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Test.ApiTests" class="method navigator-link" hash-for-method="verifyPostMethodNotAllowed">verifyPostMethodNotAllowed</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="Test.ApiTests" class="method navigator-link" hash-for-method="registerAccount">registerAccount</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -118,6 +118,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="Test.ApiTests" class="method navigator-link" hash-for-method="brandListApi">brandListApi</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Test.ApiTests" class="method navigator-link" hash-for-method="verifyLoginWithValidDetails">verifyLoginWithValidDetails</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Test.ApiTests" class="method navigator-link" hash-for-method="verifyPostMethodNotAllowed">verifyPostMethodNotAllowed</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -140,11 +150,11 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyPostMethodNotAllowed">
-                  </a> <!-- verifyPostMethodNotAllowed -->
-                  <span class="method-name">verifyPostMethodNotAllowed</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [406] but found [405]
-	at Test.ApiTests.verifyPostMethodNotAllowed(ApiTests.java:23)
+                  <a name="registerAccount">
+                  </a> <!-- registerAccount -->
+                  <span class="method-name">registerAccount</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [201] but found [200]
+	at Test.ApiTests.registerAccount(ApiTests.java:53)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 ... Removed 32 stack frames
 </div> <!-- stack-trace -->
@@ -163,6 +173,20 @@
                   <a name="brandListApi">
                   </a> <!-- brandListApi -->
                   <span class="method-name">brandListApi</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginWithValidDetails">
+                  </a> <!-- verifyLoginWithValidDetails -->
+                  <span class="method-name">verifyLoginWithValidDetails</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyPostMethodNotAllowed">
+                  </a> <!-- verifyPostMethodNotAllowed -->
+                  <span class="method-name">verifyPostMethodNotAllowed</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -222,20 +246,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyPostMethodNotAllowed')
 data.setCell(0, 2, 'Test.ApiTests')
-data.setCell(0, 3, 2526);
+data.setCell(0, 3, 3430);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'brandListApi')
 data.setCell(1, 2, 'Test.ApiTests')
-data.setCell(1, 3, 414);
+data.setCell(1, 3, 1350);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'registerAccount')
+data.setCell(2, 2, 'Test.ApiTests')
+data.setCell(2, 3, 1250);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyLoginWithValidDetails')
+data.setCell(3, 2, 'Test.ApiTests')
+data.setCell(3, 3, 464);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -267,14 +299,22 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">verifyPostMethodNotAllowed</span>
-                <span class="method-start">260 ms</span>
+                <span class="method-start">552 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">brandListApi</span>
-                <span class="method-start">2794 ms</span>
+                <span class="method-start">3987 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">registerAccount</span>
+                <span class="method-start">5340 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyLoginWithValidDetails</span>
+                <span class="method-start">6597 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
