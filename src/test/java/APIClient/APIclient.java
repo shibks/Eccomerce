@@ -10,21 +10,19 @@ public class APIclient {
 
 	public Response post(String endpoint) {
 		return given()
-				.log().all()
 		.when()
 		.post(endpoint)
 		.then()
-		.log().all()
 		.extract().response();
 	}
 	
 	public Response get(String endpoint) {
 		return given()
-				.log().all()
+				
 				.when()
 				.get(endpoint)
 				.then()
-				.log().all()
+				
 				.extract().response();
 	}
 	
@@ -33,20 +31,19 @@ public class APIclient {
 				.contentType(ContentType.URLENC)
 				.formParam("email",username)
 				.formParam("password", password)
-				.log().all()
+			
 				.when()
 				.post("verifyLogin")
-				.then().log().all().extract().response();
+				.then().extract().response();
 	}
 	
 	public Response createAccount(Map<String, String> userData) {
 		return given()
 				.contentType(ContentType.URLENC)
 				.formParams(userData)
-				.log().all()
 				.when()
 				.post("/createAccount")
-				.then().log().all().extract().response();
+				.then().extract().response();
 	}
 
 	

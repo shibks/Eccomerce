@@ -18,7 +18,7 @@ import io.restassured.response.Response;
 public class ApiTests extends BaseAPITest {
 	
 	
-	@Test(priority = 1)
+	
 	public void verifyPostMethodNotAllowed() {
 		Response res=api.post("/productsList");
 		Reporter.getCurrentTestResult().getTestContext().setAttribute("API_RESPONSE", res);
@@ -26,7 +26,7 @@ public class ApiTests extends BaseAPITest {
 		Assertionhelper.verifyMessage(res, "This request method is not supported.");
 	}
 	
-	@Test(priority = 2)
+	
 	public void brandListApi() { 
 		Response res=api.get("/brandsList");
 		Reporter.getCurrentTestResult().getTestContext().setAttribute("API_RESPONSE", res);
@@ -41,11 +41,12 @@ public class ApiTests extends BaseAPITest {
 	public void verifyLoginWithValidDetails() {
 		Response res=api.verifyLogin("shibink3517@gmail.com", "123456");
 		Reporter.getCurrentTestResult().getTestContext().setAttribute("API_RESPONSE", res);
+		
 		Assert.assertEquals(res.jsonPath().getString("message"), "User exists!","Status verification failed");
 		Assert.assertEquals(res.getStatusCode(), 200);
 	}
 	
-	@Test(priority = 3)
+
 	public void registerAccount() {
 		Map<String, String> userData = UserDataAPIUtil.getCreateAccountData();
 		Response res=api.createAccount(userData);

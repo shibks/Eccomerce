@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test.ApiTests">
+      <class name="Test.RegressionTest">
         <methods>
-          <include name="setUp"/>
-          <include name="verifyLoginWithValidDetails"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+          <include name="LoginWithCorrectUserAndEmail"/>
         </methods>
-      </class> <!-- Test.ApiTests -->
+      </class> <!-- Test.RegressionTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

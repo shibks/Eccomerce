@@ -7,6 +7,8 @@ import PageNew.ContactUsPage1;
 import PageNew.HomePage1;
 import PageNew.LoginPage1;
 import PageNew.ProductsPage1;
+import PaymentPage.PaymentPageClass;
+import Utilities.ConfigReader;
 import base.BaseTest;
 
 public class RegressionTest extends BaseTest {
@@ -24,7 +26,7 @@ public class RegressionTest extends BaseTest {
 		
 	}
 
-	@Test(priority = 2)
+	
 	public void AllProductsAndProductDetailPage() {
 		HomePage1 home=new HomePage1(driver);
 		ProductsPage1 product=new ProductsPage1(driver);
@@ -37,7 +39,7 @@ public class RegressionTest extends BaseTest {
 		product.goHome();
 	}
 	
-	@Test(priority = 3)
+	
 	public void contactUsForm() {
 		HomePage1 home=new HomePage1(driver);
 		ContactUsPage1 contact=new ContactUsPage1(driver);
@@ -51,7 +53,7 @@ public class RegressionTest extends BaseTest {
 		home.isHomeVisible();
 	}
 	
-	@Test(priority=4)
+	
 	public void searchProduct() {
 		HomePage1 home=new HomePage1(driver);
 		ProductsPage1 page=new ProductsPage1(driver);
@@ -64,7 +66,7 @@ public class RegressionTest extends BaseTest {
 		page.goHome();
 	}
 	
-	@Test(priority = 5)
+	
 	public void addProductsToCart() {
 		HomePage1 home=new HomePage1(driver);
 		ProductsPage1 page=new ProductsPage1(driver);
@@ -82,7 +84,7 @@ public class RegressionTest extends BaseTest {
 		
 	}
 	
-	@Test(priority = 6)
+
 	public void categoryCheck() {
 		HomePage1 home=new HomePage1(driver);
 		ProductsPage1 product=new ProductsPage1(driver);
@@ -93,6 +95,26 @@ public class RegressionTest extends BaseTest {
 		product.checkMensCategoryHeading();
 		
 	}
+	
+	
+	public void paymentCheck() {
+		driver.get(ConfigReader.getProperty("paymentUrl"));
+		PaymentPageClass payment=new PaymentPageClass(driver);
+		payment.enterShipingInfo();
+		payment.enterCardDetails("4242 4242 4242 4242","1234","123");
+		payment.checkSuccessMsg();
+	}
+	
+
+	public void expiredPaymentCheck() {
+		driver.get(ConfigReader.getProperty("paymentUrl"));
+		PaymentPageClass payment=new PaymentPageClass(driver);
+		payment.enterShipingInfo();
+		payment.enterCardDetails("4000 0000 0000 9995","1234","123");
+		payment.checkFailureMsg();
+		
+	}
+	
 	
 	
 	

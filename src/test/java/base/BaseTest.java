@@ -1,5 +1,6 @@
 package base;
 
+
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
@@ -19,13 +20,18 @@ public WebDriver driver;
 		
 		driver=DriverFactory.initDriver();
 		driver.manage().window().maximize();
+		
+		driver.manage().deleteAllCookies();
+
 		 context.setAttribute("WebDriver", driver);
 System.out.println("------Driver Initialized---------");
 
 driver.get(EnvConfig.getURL());
+
+
 	}
 	
-	@AfterClass
+@AfterClass
 	public void teardown() {
 		DriverFactory.quitDriver();
 	}
